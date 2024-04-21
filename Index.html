@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baumfreunde</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <!--Logo-->
+        <div class="logo">
+            <img src="images/Baumfreunde.png" alt="Logo">
+        </div>
+        <nav>
+            <!--Menü-->
+            <ul>
+                <li><a href="überuns.html">Über uns</a></li>
+                <li><a href="Bildergalerie.html">Bildergalerie</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <input type="text" id="myInput" onkeyup="searchunternehmen()" placeholder="Suche nach Unternehmen..">
+        <input type="text" id="myInputcountry" onkeyup="searchcountry()" placeholder="Suche nach Land.."> 
+        
+        <table id="myTable">
+          <tr class="header">
+            <th id="headerUnternehmen" style="width:60%;">Unternehmen</th>
+            <th id="headerCountry" style="width:40%;">Country</th>
+            <th id="headerEmmisionen" style="width:40%;">Emmisione in t CO²</th>
+          </tr>
+          <tr>
+            <td>BMW</td>
+            <td>Germany</td>
+            <td>1500</td>
+          </tr>
+          <tr>
+            <td>Bergbaugeseltschaft Fritz</td>
+            <td>Sweden</td>
+            <td>4000</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+            <td>2000</td>
+          </tr>
+          <tr>
+            <td>Konigliche Goldmanufaktur</td>
+            <td>Germany</td>
+            <td>300</td>
+          </tr>
+        </table> 
+        <script src="index.js"></script>       
+    </div>
+    <footer>
+      <p>&copy; 2024 Baumfreunde. Alle Rechte vorbehalten. | <a href="impressum.html">Impressum</a></p>
+    </footer>
+
+    <div id="cookie-banner" style="display: none;">
+      Diese Website verwendet Cookies. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. <a href="#" id="cookie-accept">Zustimmen</a> | <a href="#" id="cookie-reject">Ablehnen</a>
+    </div>
+
+    <script>
+        // Cookie-Hinweis anzeigen, wenn noch keine Zustimmung erteilt wurde
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+
+        // Zustimmungsfunktion
+        document.getElementById('cookie-accept').addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        // Ablehnungsfunktion
+        document.getElementById('cookie-reject').addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Hier kannst du entsprechende Maßnahmen ergreifen, wenn der Benutzer die Verwendung von Cookies ablehnt
+        });
+    </script>
+    
+</body>
+</html>
